@@ -1,4 +1,4 @@
-package modulo.issue.handles
+package modulo.issue.controllers
 
 import io.javalin.Context
 import modulo.issue.classes.IssueEvent

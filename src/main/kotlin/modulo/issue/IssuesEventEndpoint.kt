@@ -2,7 +2,7 @@ package modulo.issue
 
 import io.javalin.apibuilder.ApiBuilder
 import io.javalin.apibuilder.EndpointGroup
-import modulo.issue.handles.IssueEventHandler
+import modulo.issue.controllers.IssueEventHandler
 
 class IssuesEventEndpoint : EndpointGroup {
 
