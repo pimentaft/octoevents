@@ -19,6 +19,7 @@ object IssueEventController : KoinComponent {
             }
         } catch (e: Exception) {
             ctx.status(406).json(mapOf("message" to "Error"))
+            e.printStackTrace()
         }
     }
 }
