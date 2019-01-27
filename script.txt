@@ -1,0 +1,43 @@
+1) criar schema github in database postgres:
+
+connect postgres;
+CREATE SCHEMA github;
+
+2) criar tabela ISSUE_EVENT
+
+CREATE TABLE github.issue_event
+(
+    action character(50) COLLATE pg_catalog."default",
+    issue_id integer NOT NULL,
+    id uuid NOT NULL,
+    CONSTRAINT issue_event_pkey PRIMARY KEY (id),
+    CONSTRAINT fk_issue FOREIGN KEY (issue_id)
+        REFERENCES github.issue (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE github.issue_event
+    OWNER to postgres;
+	
+3) criar tabela ISSUE
+
+CREATE TABLE github.issue
+(
+    create_at date,
+    update_at date,
+    id integer NOT NULL,
+    CONSTRAINT issue_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE github.issue
+    OWNER to postgres;
+
