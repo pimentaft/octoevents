@@ -22,4 +22,10 @@ object IssueEventController : KoinComponent {
             e.printStackTrace()
         }
     }
+
+    fun getEvents(ctx: Context) {
+        val issueId = ctx.pathParam("id").toInt()
+        val events = issueEventService.getEvents(issueId)
+        ctx.json(events)
+    }
 }

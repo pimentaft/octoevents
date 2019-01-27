@@ -16,7 +16,10 @@ class Application : KoinComponent{
     fun start() = Javalin.create().apply{
         StandAloneContext.startKoin(listOf(IssueEventModule))
 
-        Database.connect("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1", driver = "org.h2.Driver")
+        Database.connect("jdbc:postgresql://localhost/github",
+            driver = "org.postgresql.Driver",
+            user="postgres",
+            password="123")
 
         port(4567)
         routes {

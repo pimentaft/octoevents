@@ -9,9 +9,8 @@ class IssuesEventEndpoint : EndpointGroup {
     override fun addEndpoints() {
         ApiBuilder.post("/payload", IssueEventController::payload)
 
-//        ApiBuilder.path("/issues") {
-//            ApiBuilder.get("/:id/events", IssueEventController::getEvents)
-//            ApiBuilder.get("/statistics", IssueEventController::getStatistics)
-//        }
+        ApiBuilder.path("/issues") {
+            ApiBuilder.get("/:id/events", IssueEventController::getEvents)
+        }
     }
 }
