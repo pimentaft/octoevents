@@ -4,8 +4,6 @@
 - Os scripts estão no arquivo script.txt do projeto
 
 2) Acesso ao github
-- Login: pimentaft Senha: oLeo2010 
-- Baixar o projeto 
 git clone https://github.com/pimentaft/octoevents.git
 
 3) Rodar no maven clean install
